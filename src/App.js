@@ -1,13 +1,11 @@
 import './App.css';
-import { isLabelWithInternallyDisabledControl } from '@testing-library/user-event/dist/utils';
 import randomColor from 'randomcolor';
 import { useState } from 'react';
 
 randomColor();
 function App() {
-  const [color, setColor] = useState('');
+  const [color, setColor] = useState('#9C66CC');
   const [hueUserInput, setHueUserInput] = useState('');
-  const [luminosityUserInput, setLuminosityUserInput] = useState('');
 
   return (
     <div>
@@ -16,7 +14,7 @@ function App() {
         className="colorbox"
         style={{
           width: '400px',
-          height: '600px',
+          height: '300px',
           margin: '0 auto',
           display: 'flex',
           backgroundColor: color,
@@ -39,11 +37,12 @@ function App() {
       >
         <span>Generate</span>
       </button>
-      <br />
-      <div>
-        <label htmlFor="hue">Choose hue:</label>
+      <div className="custom-field">
+        <label htmlFor="hue" className="placeholder">
+          <span>Choose hue:</span>
+        </label>
         <input
-          placeholder="Your Color"
+          placeholder="Enter your color here"
           id="hue"
           value={hueUserInput}
           onChange={(event) => {

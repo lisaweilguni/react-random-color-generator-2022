@@ -5,8 +5,8 @@ div {
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
-  background-color: black;
-  height: 800px;
+  background-color: #181818;
+  height: 750px;
 }
 
 .colorbox {
@@ -65,4 +65,36 @@ button:hover span {
     font-size: 24px;
     min-width: 196px;
   }
+}
+
+label {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+.custom-field {
+  font-size: 14px;
+  position: relative;
+  height: 200px;
+}
+
+.custom-field input {
+  border: none;
+  -webkit-appearance: none;
+  -ms-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: #f2f2f2;
+  padding: 12px;
+  border-radius: 3px;
+  width: 250px;
+  font-size: 14px;
+}
+
+h1 {
+  font-family: 'Andale Mono';
+  margin-top: 40px;
+  text-decoration: none;
+  font-size: 45px;
 }
