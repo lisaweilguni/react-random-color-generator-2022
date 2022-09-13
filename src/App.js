@@ -21,7 +21,7 @@ function App() {
           backgroundColor: color,
         }}
       >
-        Generated Color: <br /> {color}
+        Generated Color: {color}
       </div>
       <br />
       <br />
