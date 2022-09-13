@@ -44,11 +44,11 @@ function App() {
             onChange={(event) => {
               setHueUserInput(event.currentTarget.value);
 
-              const hueUserInput = event.currentTarget.value;
+              const hueUserInputSelected = event.currentTarget.value;
               setColor(
                 randomColor({
                   luminosity: 'random',
-                  hue: hueUserInput,
+                  hue: hueUserInputSelected,
                 }),
               );
             }}
@@ -73,10 +73,10 @@ function App() {
             onChange={(event) => {
               setColorLightness(event.currentTarget.value);
 
-              const colorLightness = event.currentTarget.value;
+              const colorLightnessSelected = event.currentTarget.value;
               setColor(
                 randomColor({
-                  luminosity: colorLightness,
+                  luminosity: colorLightnessSelected,
                   hue: hueUserInput,
                 }),
               );
