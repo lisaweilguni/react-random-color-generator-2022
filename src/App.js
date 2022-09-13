@@ -6,6 +6,7 @@ randomColor();
 function App() {
   const [color, setColor] = useState('#9C66CC');
   const [hueUserInput, setHueUserInput] = useState('');
+  const [colorLightness, setColorLightness] = useState('');
 
   return (
     <div>
@@ -14,16 +15,10 @@ function App() {
         className="colorbox"
         style={{
           width: '400px',
-          height: '300px',
-          margin: '0 auto',
+          height: '800px',
+          margin: '50px 10px 10px 10px',
           display: 'flex',
           backgroundColor: color,
-          alignItems: 'center',
-          justifyContent: 'center',
-          textAlign: 'center',
-          borderRadius: '25px',
-          border: '3px solid white',
-          marginTop: '30px',
         }}
       >
         Generated Color: <br /> {color}
@@ -37,37 +32,60 @@ function App() {
       >
         <span>Generate</span>
       </button>
-      <div className="custom-field">
-        <label htmlFor="hue" className="placeholder">
-          <span>Choose hue:</span>
-        </label>
-        <input
-          placeholder="Enter your color here"
-          id="hue"
-          value={hueUserInput}
-          onChange={(event) => {
-            setHueUserInput(event.currentTarget.value);
 
-            const userHue = event.currentTarget.value;
-            if (
-              userHue === 'red' ||
-              userHue === 'orange' ||
-              userHue === 'yellow' ||
-              userHue === 'green' ||
-              userHue === 'blue' ||
-              userHue === 'purple' ||
-              userHue === 'pink' ||
-              userHue === 'monochrome'
-            ) {
+      <div className="selectors">
+        <div className="custom-field">
+          <label htmlFor="hue">
+            <span>🎨 Choose hue:</span>
+          </label>
+          <select
+            id="hue"
+            value={hueUserInput}
+            onChange={(event) => {
+              setHueUserInput(event.currentTarget.value);
+
+              const hueUserInput = event.currentTarget.value;
               setColor(
                 randomColor({
                   luminosity: 'random',
-                  hue: userHue,
+                  hue: hueUserInput,
                 }),
               );
-            }
-          }}
-        />
+            }}
+          >
+            <option value="red">red</option>
+            <option value="orange">orange</option>
+            <option value="yellow">yellow</option>
+            <option value="green">green</option>
+            <option value="blue">blue</option>
+            <option value="purple">purple</option>
+            <option value="pink">pink</option>
+          </select>
+        </div>
+
+        <div className="custom-field">
+          <label htmlFor="luminosity">
+            <span>💡 Choose luminosity:</span>
+          </label>
+          <select
+            id="luminosity"
+            value={colorLightness}
+            onChange={(event) => {
+              setColorLightness(event.currentTarget.value);
+
+              const colorLightness = event.currentTarget.value;
+              setColor(
+                randomColor({
+                  luminosity: colorLightness,
+                  hue: hueUserInput,
+                }),
+              );
+            }}
+          >
+            <option value="light">light</option>
+            <option value="dark">dark</option>
+          </select>
+        </div>
       </div>
     </div>
   );

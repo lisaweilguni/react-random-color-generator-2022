@@ -6,16 +6,22 @@ div {
   font-size: calc(10px + 2vmin);
   color: white;
   background-color: #181818;
-  height: 750px;
+  height: 100vh;
 }
 
-.colorbox {
+div .colorbox {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: black;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-radius: 25px;
+  border: 3px solid white;
+  margin-top: 30px;
 }
 
 button {
@@ -33,7 +39,7 @@ button {
   line-height: 1em;
   max-width: 100%;
   min-width: 140px;
-  padding: 3px;
+  padding: 15px;
   text-decoration: none;
   user-select: none;
   -webkit-user-select: none;
@@ -45,19 +51,10 @@ button {
 button:active,
 button:hover {
   outline: 0;
-}
-
-button span {
-  background-color: rgb(5, 6, 45);
-  padding: 16px 24px;
-  border-radius: 6px;
-  transition: 300ms;
-  max-width: 100%;
-  min-width: 140px;
-}
-
-button:hover span {
-  background: none;
+  background-image: none;
+  background-color: white;
+  color: #af40ff;
+  transition: 400ms;
 }
 
 @media (min-width: 768px) {
@@ -75,26 +72,20 @@ label {
 
 .custom-field {
   font-size: 14px;
-  position: relative;
   height: 200px;
+  margin-right: 40px;
 }
 
-.custom-field input {
-  border: none;
-  -webkit-appearance: none;
-  -ms-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background: #f2f2f2;
-  padding: 12px;
-  border-radius: 3px;
-  width: 250px;
-  font-size: 14px;
+div .selectors {
+  display: flex;
+  flex-direction: row;
+  margin: 0 auto;
 }
 
 h1 {
   font-family: 'Andale Mono';
   margin-top: 40px;
+  margin-bottom: 0px;
   text-decoration: none;
   font-size: 45px;
 }
