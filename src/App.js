@@ -30,7 +30,7 @@ function App() {
           setColor(randomColor());
         }}
       >
-        <span>Generate</span>
+        Generate
       </button>
 
       <div className="selectors">
